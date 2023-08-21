@@ -52,6 +52,69 @@ func (m *MockInfrastructureUsageServiceIface) EXPECT() *MockInfrastructureUsageS
 	return m.recorder
 }
 
+// GetManagementServerByID mocks base method.
+func (m *MockInfrastructureUsageServiceIface) GetManagementServerByID(id string, opts ...OptionFunc) (*ManagementServer, int, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{id}
+	for _, a := range opts {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "GetManagementServerByID", varargs...)
+	ret0, _ := ret[0].(*ManagementServer)
+	ret1, _ := ret[1].(int)
+	ret2, _ := ret[2].(error)
+	return ret0, ret1, ret2
+}
+
+// GetManagementServerByID indicates an expected call of GetManagementServerByID.
+func (mr *MockInfrastructureUsageServiceIfaceMockRecorder) GetManagementServerByID(id interface{}, opts ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{id}, opts...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetManagementServerByID", reflect.TypeOf((*MockInfrastructureUsageServiceIface)(nil).GetManagementServerByID), varargs...)
+}
+
+// GetManagementServerByName mocks base method.
+func (m *MockInfrastructureUsageServiceIface) GetManagementServerByName(name string, opts ...OptionFunc) (*ManagementServer, int, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{name}
+	for _, a := range opts {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "GetManagementServerByName", varargs...)
+	ret0, _ := ret[0].(*ManagementServer)
+	ret1, _ := ret[1].(int)
+	ret2, _ := ret[2].(error)
+	return ret0, ret1, ret2
+}
+
+// GetManagementServerByName indicates an expected call of GetManagementServerByName.
+func (mr *MockInfrastructureUsageServiceIfaceMockRecorder) GetManagementServerByName(name interface{}, opts ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{name}, opts...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetManagementServerByName", reflect.TypeOf((*MockInfrastructureUsageServiceIface)(nil).GetManagementServerByName), varargs...)
+}
+
+// GetManagementServerID mocks base method.
+func (m *MockInfrastructureUsageServiceIface) GetManagementServerID(name string, opts ...OptionFunc) (string, int, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{name}
+	for _, a := range opts {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "GetManagementServerID", varargs...)
+	ret0, _ := ret[0].(string)
+	ret1, _ := ret[1].(int)
+	ret2, _ := ret[2].(error)
+	return ret0, ret1, ret2
+}
+
+// GetManagementServerID indicates an expected call of GetManagementServerID.
+func (mr *MockInfrastructureUsageServiceIfaceMockRecorder) GetManagementServerID(name interface{}, opts ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{name}, opts...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetManagementServerID", reflect.TypeOf((*MockInfrastructureUsageServiceIface)(nil).GetManagementServerID), varargs...)
+}
+
 // GetManagementServersMetricByID mocks base method.
 func (m *MockInfrastructureUsageServiceIface) GetManagementServersMetricByID(id string, opts ...OptionFunc) (*ManagementServersMetric, int, error) {
 	m.ctrl.T.Helper()
@@ -130,6 +193,21 @@ func (mr *MockInfrastructureUsageServiceIfaceMockRecorder) ListDbMetrics(p inter
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDbMetrics", reflect.TypeOf((*MockInfrastructureUsageServiceIface)(nil).ListDbMetrics), p)
 }
 
+// ListManagementServers mocks base method.
+func (m *MockInfrastructureUsageServiceIface) ListManagementServers(p *ListManagementServersParams) (*ListManagementServersResponse, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListManagementServers", p)
+	ret0, _ := ret[0].(*ListManagementServersResponse)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ListManagementServers indicates an expected call of ListManagementServers.
+func (mr *MockInfrastructureUsageServiceIfaceMockRecorder) ListManagementServers(p interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListManagementServers", reflect.TypeOf((*MockInfrastructureUsageServiceIface)(nil).ListManagementServers), p)
+}
+
 // ListManagementServersMetrics mocks base method.
 func (m *MockInfrastructureUsageServiceIface) ListManagementServersMetrics(p *ListManagementServersMetricsParams) (*ListManagementServersMetricsResponse, error) {
 	m.ctrl.T.Helper()
@@ -171,4 +249,18 @@ func (m *MockInfrastructureUsageServiceIface) NewListManagementServersMetricsPar
 func (mr *MockInfrastructureUsageServiceIfaceMockRecorder) NewListManagementServersMetricsParams() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewListManagementServersMetricsParams", reflect.TypeOf((*MockInfrastructureUsageServiceIface)(nil).NewListManagementServersMetricsParams))
+}
+
+// NewListManagementServersParams mocks base method.
+func (m *MockInfrastructureUsageServiceIface) NewListManagementServersParams() *ListManagementServersParams {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "NewListManagementServersParams")
+	ret0, _ := ret[0].(*ListManagementServersParams)
+	return ret0
+}
+
+// NewListManagementServersParams indicates an expected call of NewListManagementServersParams.
+func (mr *MockInfrastructureUsageServiceIfaceMockRecorder) NewListManagementServersParams() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewListManagementServersParams", reflect.TypeOf((*MockInfrastructureUsageServiceIface)(nil).NewListManagementServersParams))
 }

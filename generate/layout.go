@@ -721,6 +721,7 @@ var layout = apiInfo{
 		"removeVirtualMachinesFromKubernetesCluster",
 	},
 	"InfrastructureUsageService": {
+		"listManagementServers",
 		"listManagementServersMetrics",
 		"listDbMetrics",
 	},

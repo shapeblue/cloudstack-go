@@ -35,6 +35,18 @@ func TestInfrastructureUsageService(t *testing.T) {
 	client := cloudstack.NewClient(server.URL, "APIKEY", "SECRETKEY", true)
 	defer server.Close()
 
+	testlistManagementServers := func(t *testing.T) {
+		if _, ok := response["listManagementServers"]; !ok {
+			t.Skipf("Skipping as no json response is provided in testdata")
+		}
+		p := client.InfrastructureUsage.NewListManagementServersParams()
+		_, err := client.InfrastructureUsage.ListManagementServers(p)
+		if err != nil {
+			t.Errorf(err.Error())
+		}
+	}
+	t.Run("ListManagementServers", testlistManagementServers)
+
 	testlistManagementServersMetrics := func(t *testing.T) {
 		if _, ok := response["listManagementServersMetrics"]; !ok {
 			t.Skipf("Skipping as no json response is provided in testdata")
